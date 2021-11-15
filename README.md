@@ -17,3 +17,6 @@ di [sini](https://github.com/andhikayuana/jokes-bapack2-android/raw/main/app-deb
 | SplashScreen | JokeFragment | JokeFragment |
 |---|---|---|
 |![alt SplashScreen](./screenshot/splash.png) |![alt JokeFragment](./screenshot/jokes1.png) | ![alt JokeFragment](./screenshot/jokes2.png) |
+
+## MAD Score
+![alt MAD Score](./screenshot/mad-summary.png)
