@@ -16,4 +16,7 @@ interface JokeDao {
     @Transaction
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(jokeEntity: JokeEntity)
+
+    @Query("SELECT COUNT(id) FROM jokes")
+    fun count(): Flow<Int>
 }

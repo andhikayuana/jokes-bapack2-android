@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import id.yuana.jokesbapack2.data.repository.JokesRepository
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -25,8 +26,8 @@ class JokeViewModel @Inject constructor(
 
     fun getRandomJoke() {
         viewModelScope.launch {
-            jokesRepository.getRandom().collect {
-                jokeContent.value = it
+            jokesRepository.getRandom().filterNotNull().collect {
+                jokeContent.value = it.content
             }
 
         }

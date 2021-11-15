@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screen.joke.JokeFragment">
 
-    <data>
-
-        <variable
-            name="viewmodel"
-            type="id.yuana.jokesbapack2.screen.joke.JokeViewModel" />
-    </data>
-
-    <FrameLayout
+    <TextView
+        android:id="@+id/tvJokeContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screen.joke.JokeFragment">
+        android:background="@color/design_default_color_primary_dark"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:paddingHorizontal="20dp"
+        android:text="Loading..."
+        android:textColor="@color/white"
+        android:textSize="36sp" />
 
-        <TextView
-            android:id="@+id/tvJokeContent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/design_default_color_primary_dark"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:paddingHorizontal="20dp"
-            android:text="@{viewmodel.jokeContent}"
-            android:textColor="@color/white"
-            android:textSize="36sp" />
-
-    </FrameLayout>
-
-</layout>
+</FrameLayout>
