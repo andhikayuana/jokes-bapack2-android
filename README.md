@@ -1,6 +1,9 @@
 # jokes-bapack2-android
 aplikasi android kumpulan jokes bapack2
 
+## Download APK
+di [sini](https://github.com/andhikayuana/jokes-bapack2-android/raw/main/app-debug.apk)
+
 ## Requirements
 - Android Studio Artic Fox + SDK
 - JDK 11
