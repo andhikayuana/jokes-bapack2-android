@@ -34,6 +34,10 @@ android {
         jvmTarget = '1.8'
     }
 
+    buildFeatures {
+        dataBinding true
+    }
+
 }
 
 dependencies {
@@ -48,6 +52,8 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:${rootProject.ext.nav_version}"
 
     implementation "androidx.room:room-runtime:${rootProject.ext.room_version}"
+    implementation "androidx.room:room-ktx:${rootProject.ext.room_version}"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "androidx.room:room-compiler:${rootProject.ext.room_version}"
 
     implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofit_version}"

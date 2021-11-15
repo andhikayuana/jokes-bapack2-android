@@ -10,6 +10,9 @@ interface JokeDao {
     @Query("SELECT * FROM jokes")
     fun getAll(): Flow<List<JokeEntity>>
 
+    @Query("SELECT * FROM jokes ORDER BY RANDOM() LIMIT 1")
+    fun getRandom(): Flow<JokeEntity>
+
     @Transaction
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(jokeEntity: JokeEntity)

@@ -4,7 +4,10 @@ import id.yuana.jokesbapack2.data.local.JokesBapack2Database
 import id.yuana.jokesbapack2.data.local.entity.JokeEntity
 import id.yuana.jokesbapack2.data.remote.JokesBapack2Api
 import id.yuana.jokesbapack2.util.networkBoundResource
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class JokesRepository @Inject constructor(
@@ -20,8 +23,9 @@ class JokesRepository @Inject constructor(
             delay(500)
             api.getAll()
         },
-        saveFetchResult = {
-            it.body()?.let {
+        saveFetchResult = { res ->
+            res.body()?.let {
+                db.clearAllTables()
                 it.data.map {
                     JokeEntity(content = it)
                 }.forEach {
@@ -30,5 +34,7 @@ class JokesRepository @Inject constructor(
             }
 
         }
-    )
+    ).flowOn(Dispatchers.IO)
+
+    fun getRandom() = db.jokeDao().getRandom().map { it.content }
 }
