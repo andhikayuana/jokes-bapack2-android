@@ -13,4 +13,4 @@ aplikasi android kumpulan jokes bapack2
 ## Screenshots
 | SplashScreen | JokeFragment | JokeFragment |
 |---|---|---|
-|![alt SplashScreen](./screenshot/splash.png) |![alt JokeFragment](./screenshots/joke1.png) | ![alt JokeFragment](./screenshots/joke2.png) |
+|![alt SplashScreen](./screenshot/splash.png) |![alt JokeFragment](./screenshots/jokes1.png) | ![alt JokeFragment](./screenshots/jokes2.png) |
