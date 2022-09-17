@@ -3,8 +3,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
     }
 }
 rootProject.name = "Jokes Bapack2 App"
-include ':app'
+include(":app")
+//includeBuild(":plugin-build")
