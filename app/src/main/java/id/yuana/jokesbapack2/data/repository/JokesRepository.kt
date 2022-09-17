@@ -2,6 +2,7 @@ package id.yuana.jokesbapack2.data.repository
 
 import id.yuana.jokesbapack2.data.local.JokesBapack2Database
 import id.yuana.jokesbapack2.data.local.entity.JokeEntity
+import id.yuana.jokesbapack2.data.mapper.transformToJokeEntities
 import id.yuana.jokesbapack2.data.remote.JokesBapack2Api
 import id.yuana.jokesbapack2.util.networkBoundResource
 import kotlinx.coroutines.Dispatchers
@@ -22,16 +23,17 @@ class JokesRepository @Inject constructor(
             delay(500)
             api.getAll()
         },
-        saveFetchResult = { res ->
-            res.body()?.let {
+        saveFetchResult = { result ->
+            if (result.isSuccess) {
                 db.clearAllTables()
-                it.data.map {
-                    JokeEntity(content = it)
-                }.forEach {
-                    db.jokeDao().insert(it)
-                }
+                result.getOrNull()
+                    ?.transformToJokeEntities()
+                    ?.forEach { jokeEntity ->
+                        db.jokeDao().insert(jokeEntity)
+                    }
+            } else {
+                //todo: error handling
             }
-
         }
     ).flowOn(Dispatchers.IO)
 
