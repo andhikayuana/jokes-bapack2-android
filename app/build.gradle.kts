@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
+    alias(libs.plugins.android.application)
+    id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
 }
@@ -39,9 +39,13 @@ android {
 
     buildFeatures {
         dataBinding = true
+        compose = true
     }
     namespace = "id.yuana.jokesbapack2"
 
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.2.0-rc02"
+    }
 }
 
 dependencies {
@@ -49,6 +53,7 @@ dependencies {
     implementation(libs.bundles.network)
     implementation(libs.hilt.android)
     implementation(libs.material)
+
     kapt(libs.bundles.compiler)
 
     testImplementation(libs.bundles.testing)

@@ -1,7 +1,6 @@
 package id.yuana.jokesbapack2.data.repository
 
 import id.yuana.jokesbapack2.data.local.JokesBapack2Database
-import id.yuana.jokesbapack2.data.local.entity.JokeEntity
 import id.yuana.jokesbapack2.data.mapper.transformToJokeEntities
 import id.yuana.jokesbapack2.data.remote.JokesBapack2Api
 import id.yuana.jokesbapack2.util.networkBoundResource

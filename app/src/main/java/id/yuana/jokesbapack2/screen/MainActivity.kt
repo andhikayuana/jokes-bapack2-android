@@ -6,6 +6,7 @@ import androidx.navigation.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import id.yuana.jokesbapack2.R
 
+@Deprecated(message = "migrate to JokesBapack2Activity")
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 

@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import id.yuana.jokesbapack2.R
 
+@Deprecated("please remove this")
 @AndroidEntryPoint
 class SplashFragment : Fragment(R.layout.fragment_splash) {
 
