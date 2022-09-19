@@ -8,12 +8,12 @@ import retrofit2.http.GET
 interface JokesBapack2Api {
 
     companion object {
-        const val BASE_URL = "https://jokes-bapack2-api.herokuapp.com/"
+        const val BASE_URL = "https://jokes-bapack2-api.yuana.id/"
     }
 
     @GET("/v1/text")
-    suspend fun getAll(): Response<GetTextAllResponse>
+    suspend fun getAll(): Result<GetTextAllResponse>
 
     @GET("/v1/text/random")
-    suspend fun getRandom(): Response<GetTextRandomResponse>
+    suspend fun getRandom(): Result<GetTextRandomResponse>
 }

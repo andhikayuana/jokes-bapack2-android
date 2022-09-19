@@ -41,12 +41,12 @@ class JokeViewModelTest {
         MockKAnnotations.init(this)
 
         viewModel = JokeViewModel(repository)
-        viewModel.jokeContent.observeForever(jokeContentObserver)
+//        viewModel.jokeContent.observeForever(jokeContentObserver)
     }
 
     @After
     fun tearDown() {
-        viewModel.jokeContent.removeObserver(jokeContentObserver)
+//        viewModel.jokeContent.removeObserver(jokeContentObserver)
     }
 
     @Test

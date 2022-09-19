@@ -10,6 +10,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import id.yuana.jokesbapack2.R
 import id.yuana.jokesbapack2.util.RandomColor
 
+@Deprecated("migrate using compose")
 @AndroidEntryPoint
 class JokeFragment : Fragment(R.layout.fragment_joke) {
 
@@ -24,12 +25,12 @@ class JokeFragment : Fragment(R.layout.fragment_joke) {
             }
         }
 
-        viewModel.jokeContent.observe(viewLifecycleOwner, Observer { content ->
-            tvContent.apply {
-                text = content
-                background = RandomColor.get()
-            }
-        })
+//        viewModel.jokeContent.observe(viewLifecycleOwner, Observer { content ->
+//            tvContent.apply {
+//                text = content
+//                background = RandomColor.get()
+//            }
+//        })
 
     }
 

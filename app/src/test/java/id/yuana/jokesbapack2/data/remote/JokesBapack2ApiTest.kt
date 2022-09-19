@@ -63,7 +63,8 @@ class JokesBapack2ApiTest {
 
         //then
         assertNotNull(actualResponse)
-        actualResponse.body()?.let { actual ->
+        assertEquals(true, actualResponse.isSuccess)
+        actualResponse.getOrNull()?.let { actual ->
 
             assertEquals("Success", actual.msg)
             assertEquals(200, actual.code)
@@ -84,7 +85,8 @@ class JokesBapack2ApiTest {
 
         //then
         assertNotNull(actualResponse)
-        actualResponse.body()?.let { actual ->
+        assertEquals(true, actualResponse.isSuccess)
+        actualResponse.getOrNull()?.let { actual ->
 
             assertEquals("Success", actual.msg)
             assertEquals(200, actual.code)

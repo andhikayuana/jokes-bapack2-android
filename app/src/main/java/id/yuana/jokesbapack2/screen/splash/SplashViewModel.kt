@@ -52,6 +52,7 @@ class SplashViewModel @Inject constructor(
                                 Resource.Status.ERROR -> {
                                     Log.d("YUANA", it.message.toString())
                                 }
+                                else -> {}
                             }
 
                         }

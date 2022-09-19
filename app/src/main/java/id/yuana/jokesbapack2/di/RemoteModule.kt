@@ -1,5 +1,6 @@
 package id.yuana.jokesbapack2.di
 
+import com.skydoves.retrofit.adapters.result.ResultCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,6 +35,7 @@ object RemoteModule {
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(ResultCallAdapterFactory.create())
         .baseUrl(JokesBapack2Api.BASE_URL)
         .client(okHttpClient)
         .build()
