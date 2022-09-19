@@ -68,7 +68,7 @@ class SplashViewModelTest {
             )
 
             //when
-            advanceTimeBy(1000)
+//            advanceTimeBy(1000)
 
             //then
             verifyOrder {
@@ -101,7 +101,7 @@ class SplashViewModelTest {
             )
 
             //when
-            advanceTimeBy(1000)
+//            advanceTimeBy(1000)
 
             //then
             verifyOrder {
