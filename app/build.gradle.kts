@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    id("io.gitlab.arturbosch.detekt").version("1.21.0")
 }
 
 android {
@@ -46,6 +47,12 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.2.0-rc02"
     }
+}
+
+detekt {
+    toolVersion = "1.21.0"
+    config = files("../config/detekt/detekt.yml")
+    buildUponDefaultConfig = true
 }
 
 dependencies {
